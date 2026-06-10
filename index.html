@@ -1,10 +1,11 @@
 <!DOCTYPE html><html class="light" lang="es"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>AforoApp - Home</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>AforoApp - Expreso Luján de Cuyo S.A.</title>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -60,9 +61,9 @@
                         "surface-bright": "#fff8f7"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
                         "full": "9999px"
                     },
                     "spacing": {
@@ -98,20 +99,16 @@
         }
     </script>
 <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #fff8f7;
-            -webkit-tap-highlight-color: transparent;
-        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .active-nav-indicator {
-            height: 3px;
-            width: 100%;
-            background-color: #9e001f;
-            position: absolute;
-            bottom: 0;
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #fff8f7;
+        }
+        /* No shadows or rounded corners as per style guidance */
+        input, select, button {
+            border-radius: 0 !important;
         }
     </style>
 <style>
@@ -120,131 +117,87 @@
     }
   </style>
 </head>
-<body class="text-on-background">
-<!-- TopAppBar -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-[64px] bg-white border-b border-outline-variant">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
-<img alt="Luján Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_XmCJQI2Y5hmCTSi84BAu1DoNwJzFx0ZcXctjkDB9m5aIJQwG6PS-yj3qRUH86rH5s1fFQWfbt55VgWy_AvM218udNfyO5RIFkTkHy2dIVc0qiF3yozAD-g_9n9P9uq7LTHYwDMKh-MjHsLxz12POY_dytyH7fBIF_yFqCgraSrBZPwYaDggtqp7NjSwY3ub3VPjV0iBrrYmF_L5KtzjRnxCN1ecyB6SqaHOWydT-iPX78dqsoOQHn0kSjtsXFyq9QmMQl_S8bRo">
-</div>
-<div class="flex items-center">
-<span class="font-label-bold text-label-bold text-on-surface">Operador - Mendoza</span>
-</div>
+<body class="min-h-screen flex flex-col items-center justify-center bg-background">
+<!-- Login Container -->
+<main class="w-full max-w-[400px] flex flex-col overflow-hidden">
+<!-- Top Area: White Header -->
+<header class="bg-[#FFFFFF] p-margin-mobile md:p-margin-desktop flex flex-col items-center text-center border-x border-t border-secondary-fixed">
+<div class="mb-0"><img alt="Expreso Luján de Cuyo S.A." class="h-20 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_XmCJQI2Y5hmCTSi84BAu1DoNwJzFx0ZcXctjkDB9m5aIJQwG6PS-yj3qRUH86rH5s1fFQWfbt55VgWy_AvM218udNfyO5RIFkTkHy2dIVc0qiF3yozAD-g_9n9P9uq7LTHYwDMKh-MjHsLxz12POY_dytyH7fBIF_yFqCgraSrBZPwYaDggtqp7NjSwY3ub3VPjV0iBrrYmF_L5KtzjRnxCN1ecyB6SqaHOWydT-iPX78dqsoOQHn0kSjtsXFyq9QmMQl_S8bRo"></div>
 </header>
-<main class="pt-[88px] pb-[80px] px-margin-mobile max-w-4xl mx-auto flex flex-col gap-stack-lg">
-<!-- Welcome Section -->
-<section class="flex flex-col gap-stack-sm">
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Panel de Operaciones</h1>
-<p class="font-body-md text-body-md text-secondary">Gestión de aforos y logística local.</p>
+<!-- Form Area -->
+<section class="bg-white p-margin-mobile md:p-margin-desktop border-x border-b border-secondary-fixed">
+<form class="flex flex-col gap-stack-lg" onsubmit="event.preventDefault();">
+<!-- Username -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-bold text-label-bold text-on-surface-variant" for="username">USUARIO</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary">person</span>
+<input class="w-full h-[48px] pl-12 pr-4 border border-secondary-fixed bg-surface-bright focus:border-primary-container focus:ring-0 text-on-surface font-body-md text-body-md" id="username" name="username" placeholder="Ej: j.perez" type="text">
+</div>
+</div>
+<!-- Password -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-bold text-label-bold text-on-surface-variant" for="password">CONTRASEÑA</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary">lock</span>
+<input class="w-full h-[48px] pl-12 pr-4 border border-secondary-fixed bg-surface-bright focus:border-primary-container focus:ring-0 text-on-surface font-body-md text-body-md" id="password" name="password" placeholder="••••••••" type="password">
+</div>
+</div>
+<!-- Branch Selector -->
+<div class="flex flex-col gap-stack-sm">
+<label class="font-label-bold text-label-bold text-on-surface-variant" for="branch">SUCURSAL</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary">location_on</span>
+<select class="w-full h-[48px] pl-12 pr-4 border border-secondary-fixed bg-surface-bright focus:border-primary-container focus:ring-0 text-on-surface font-body-md text-body-md appearance-none" id="branch" name="branch">
+<option value="">Seleccione sucursal</option>
+<option value="mendoza">Mendoza (Casa Central)</option>
+<option value="bsas">Buenos Aires</option>
+<option value="cordoba">Córdoba</option>
+<option value="rosario">Rosario</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="mt-stack-lg w-full h-[48px] bg-primary-container text-white font-label-bold text-label-bold tracking-widest active:scale-[0.98] transition-transform duration-150 flex items-center justify-center gap-2" type="submit">
+                    INGRESAR
+                    <span class="material-symbols-outlined">login</span>
+</button>
+<!-- Footer Links -->
+<div class="mt-4 flex justify-between items-center">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">¿Olvidó su contraseña?</a>
+<span class="font-label-sm text-label-sm text-outline-variant">v1.2.0</span>
+</div>
+</form>
 </section>
-<!-- Stats Grid -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<!-- Card 1 -->
-<div class="flex flex-col p-4 border border-secondary bg-white min-h-[120px] justify-between">
-<div class="flex justify-between items-start">
-<span class="font-label-bold text-label-bold text-secondary uppercase tracking-wider">Aforos hoy</span>
-<span class="material-symbols-outlined text-primary">analytics</span>
+<!-- Aesthetic Branding Element -->
+<footer class="mt-8 text-center opacity-20 grayscale pointer-events-none select-none">
+<!-- Placeholder for a technical grid pattern or small logo -->
+<div class="grid grid-cols-4 gap-2 px-12">
+<div class="h-1 bg-secondary"></div>
+<div class="h-1 bg-secondary"></div>
+<div class="h-1 bg-primary"></div>
+<div class="h-1 bg-secondary"></div>
 </div>
-<div class="text-[40px] font-extrabold text-on-surface">12</div>
-</div>
-<!-- Card 2 -->
-<div class="flex flex-col p-4 border border-secondary bg-white min-h-[120px] justify-between relative overflow-hidden">
-<div class="flex justify-between items-start">
-<span class="font-label-bold text-label-bold text-secondary uppercase tracking-wider">Sin sincronizar</span>
-<div class="bg-[#FFC107] text-white font-label-bold text-[10px] px-2 py-1 uppercase">Advertencia</div>
-</div>
-<div class="flex items-baseline gap-2">
-<div class="text-[40px] font-extrabold text-on-surface">3</div>
-<span class="material-symbols-outlined text-[#FFC107] align-middle">cloud_off</span>
-</div>
-</div>
-</section>
-<!-- Primary Actions -->
-<section class="flex flex-col gap-stack-md mt-4">
-<button class="bg-primary text-on-primary h-[56px] flex items-center justify-center gap-2 font-label-bold text-body-lg active:scale-95 duration-150 shadow-none">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_box</span>
-                + Nuevo aforo
-            </button>
-<button class="border-2 border-primary text-primary h-[56px] flex items-center justify-center gap-2 font-label-bold text-body-lg active:bg-surface-variant duration-150">
-<span class="material-symbols-outlined">history</span>
-                Ver historial
-            </button>
-</section>
-<!-- Recent Activity Label -->
-<section class="mt-4 border-t border-outline-variant pt-stack-lg">
-<h2 class="font-label-bold text-label-bold text-on-surface mb-stack-md uppercase">Actividad Reciente</h2>
-<div class="flex flex-col border border-secondary divide-y divide-secondary bg-white">
-<div class="flex items-center justify-between p-4 h-[56px]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">local_shipping</span>
-<div class="flex flex-col">
-<span class="font-label-bold text-label-bold">Carga #4521</span>
-<span class="text-[10px] text-secondary">10:45 AM - Mendoza</span>
-</div>
-</div>
-<span class="font-label-bold text-label-bold">4.2 TN</span>
-</div>
-<div class="flex items-center justify-between p-4 h-[56px]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">local_shipping</span>
-<div class="flex flex-col">
-<span class="font-label-bold text-label-bold">Carga #4520</span>
-<span class="text-[10px] text-secondary">09:12 AM - Maipú</span>
-</div>
-</div>
-<span class="font-label-bold text-label-bold">12.8 TN</span>
-</div>
-</div>
-</section>
+</footer>
 </main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[56px] pb-safe bg-on-secondary-fixed dark:bg-on-secondary-fixed border-t border-secondary dark:border-secondary-fixed-dim">
-<a class="flex flex-col items-center justify-center bg-primary text-on-primary h-full w-full active:scale-95 duration-100" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-sm text-label-sm">Inicio</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-primary h-full w-full hover:bg-primary-container" href="#">
-<span class="material-symbols-outlined">straighten</span>
-<span class="font-label-sm text-label-sm">Medición</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-primary h-full w-full hover:bg-primary-container" href="#">
-<span class="material-symbols-outlined">history</span>
-<span class="font-label-sm text-label-sm">Historial</span>
-</a>
-</nav>
+<!-- Background Illustration/Image (Subtle) -->
+<div class="fixed inset-0 -z-10 overflow-hidden opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="A high-angle architectural shot of a massive, modern logistics warehouse distribution center. The scene is dominated by clean lines, concrete floors, and steel structures, bathed in a cool, bright morning light. The color palette is industrial, featuring shades of light grey and white with occasional red safety markings. The mood is professional, efficient, and highly organized, reflecting a global transport infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg1dWzaYT1n1mF1vXcGj1LeXrRKhnCgUaon3LYAIMWCGT50DtgQLEbTqIEDG2gUe2ydaMNts-gUNXbn1MR5zNN55BH2Pr9bsNHoMxz8xrK7wb4makFrmFsLxiDRut5q47hoXWvwnJoQER7Nb4sw4RapP09J0SwCWufiz8Ee7Ej3n-o_8IetOyQff2UOj_mTGGxOFdII6uCqmrCLPWK8D_0VooqZFyK5leWpzGpht_xuqECFyJQvo0g28i_3BrPfH0rrs-Sy_uiuPM">
+</div>
+<!-- Micro-interaction Script -->
 <script>
-        // Simple ripple-like effect for buttons
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const rect = this.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                let ripple = document.createElement('span');
-                ripple.style.position = 'absolute';
-                ripple.style.left = `${x}px`;
-                ripple.style.top = `${y}px`;
-                ripple.style.width = '0px';
-                ripple.style.height = '0px';
-                ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-                ripple.style.borderRadius = '50%';
-                ripple.style.transform = 'translate(-50%, -50%)';
-                ripple.style.transition = 'width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out';
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.style.width = '200px';
-                    ripple.style.height = '200px';
-                    ripple.style.opacity = '0';
-                }, 10);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 500);
-            });
+        document.querySelector('form').addEventListener('submit', function() {
+            const btn = this.querySelector('button');
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> ACCEDIENDO...';
+            btn.classList.add('opacity-80');
+            
+            // Artificial delay to simulate industrial system response
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> BIENVENIDO';
+                btn.classList.remove('bg-primary-container');
+                btn.classList.add('bg-green-700');
+            }, 1200);
         });
     </script>
 </body></html>
